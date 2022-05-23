@@ -121,7 +121,7 @@ class DataLoaderVal(Dataset):
         inp_img = Image.open(inp_path)
         tar_img = Image.open(tar_path)
         
-        f inp_img.mode == "L":
+        if inp_img.mode == "L":
             rgbimg = Image.new("RGB", inp_img.size)
             rgbimg.paste(inp_img)
             inp_img = rgbimg
