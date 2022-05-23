@@ -122,9 +122,9 @@ class DataLoaderVal(Dataset):
         tar_img = Image.open(tar_path)
         
         f inp_img.mode == "L":
-        rgbimg = Image.new("RGB", inp_img.size)
-        rgbimg.paste(inp_img)
-        inp_img = rgbimg
+            rgbimg = Image.new("RGB", inp_img.size)
+            rgbimg.paste(inp_img)
+            inp_img = rgbimg
 
         # Validate on center crop
         if self.ps is not None:
