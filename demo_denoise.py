@@ -13,8 +13,8 @@ import cv2
 import argparse
 
 parser = argparse.ArgumentParser(description='Demo MPRNet')
-parser.add_argument('--input_dir', default='./Datasets/test/input/', type=str, help='Input images')
-parser.add_argument('--result_dir', default='./Datasets/test/output/', type=str, help='Directory for results')
+parser.add_argument('--input_dir', default='./Denoising/Datasets/test/input/', type=str, help='Input images')
+parser.add_argument('--result_dir', default='./Denoising/Datasets/test/output/', type=str, help='Directory for results')
 parser.add_argument('--task', default = 'Denoising', type=str, help='Task to run', choices=['Deblurring', 'Denoising', 'Deraining'])
 
 args = parser.parse_args()
@@ -53,7 +53,7 @@ load_file = run_path(os.path.join(task, "MPRNet.py"))
 model = load_file['MPRNet']()
 model.cuda()
 
-weights = os.path.join(task, "pretrained_models", "model_"+task.lower()+".pth")
+weights =  "./Denoising/checkpoints/Denoising/models/MPRNet/model_best.pth"
 load_checkpoint(model, weights)
 model.eval()
 
