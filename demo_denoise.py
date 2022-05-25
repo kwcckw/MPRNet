@@ -53,7 +53,7 @@ load_file = run_path(os.path.join(task, "MPRNet.py"))
 model = load_file['MPRNet']()
 model.cuda()
 
-weights =  "./Denoising/checkpoints/Denoising/models/MPRNet/model_best.pth"
+weights =  "./Denoising/checkpoints/Denoising/models/MPRNet/model_latest.pth"
 load_checkpoint(model, weights)
 model.eval()
 
